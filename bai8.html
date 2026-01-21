@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>La Belle Époque - Fine Dining Portfolio & Reservation</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-color: #fcfaf8;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #121212;
+            padding: 20px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 20px;
+        }
+
+        .logo {
+            color: #d4af37;
+            font-size: 1.5rem;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 25px;
+        }
+
+        .nav-links a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .nav-links a:hover {
+            color: #d4af37;
+        }
+
+        .hero {
+            height: 70vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        .btn-gold {
+            padding: 12px 35px;
+            background-color: #d4af37;
+            color: #000;
+            text-decoration: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            border-radius: 30px;
+            transition: 0.3s;
+        }
+
+        .btn-gold:hover {
+            background-color: #fff;
+        }
+
+        .section-padding {
+            padding: 80px 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .section-title {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 2px;
+            background: #d4af37;
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .dish-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: center;
+        }
+
+        .dish-card {
+            flex: 1 1 calc(25% - 20px);
+            min-width: 250px;
+            height: 320px;
+            position: relative;
+            overflow: hidden;
+            border-radius: 12px;
+            cursor: pointer;
+        }
+
+        .dish-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .dish-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: #fff;
+            opacity: 0;
+            transition: 0.4s;
+        }
+
+        .dish-card:hover img {
+            transform: scale(1.1);
+        }
+
+
+        .dish-overlay h3 {
+            color: #d4af37;
+            margin-bottom: 5px;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .gallery-item {
+            flex: 1 1 calc(33.333% - 15px);
+            min-width: 300px;
+            height: 250px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .reservation-bg {
+            background-color: #8b0000;
+            color: white;
+            padding: 80px 20px;
+        }
+
+        .booking-form {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .form-control {
+            flex: 1 1 calc(33.333% - 20px);
+            min-width: 250px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .form-control input,
+        .form-control select {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 4px;
+        }
+
+        .btn-submit {
+            flex: 1 1 100%;
+            padding: 15px;
+            background: white;
+            color: #8b0000;
+            border: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 4px;
+        }
+
+        .btn-submit:hover {
+            background: #f0f0f0;
+        }
+
+        footer {
+            background: #121212;
+            color: #666;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+    </style>
+    }
+</head>
+
+<body>
+
+    <header>
+        <div class="nav-container">
+            <div class="logo">La Belle Époque</div>
+            <nav>
+                <ul class="nav-links">
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Menu</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="hero">
+        <h1>Đặt Bàn Tại La Belle Époque</h1>
+        <p>Trải nghiệm không gian Fine Dining sang trọng và dịch vụ hoàn hảo.</p>
+        <a href="#booking" class="btn-gold">Khám Phá Menu</a>
+    </section>
+
+    <section class="section-padding">
+        <h2 class="section-title">Món Ăn Nổi Bật</h2>
+        <div class="dish-grid">
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?w=500" alt="Beef">
+                <div class="dish-overlay">
+                    <h3>Beef Wellington</h3>
+                    <p>$85.00</p>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=500" alt="Lobster">
+                <div class="dish-overlay">
+                    <h3>Tôm Hùm Thermidor</h3>
+                    <p>$110.00</p>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=500" alt="Pasta">
+                <div class="dish-overlay">
+                    <h3>Mì Ý Nghệ Thuật</h3>
+                    <p>$45.00</p>
+                </div>
+            </div>
+            <div class="dish-card">
+                <img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=500" alt="Dessert">
+                <div class="dish-overlay">
+                    <h3>Tráng Miệng Tinh Tế</h3>
+                    <p>$35.00</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-padding" style="background-color: #fff; max-width: 100%;">
+        <h2 class="section-title">Không Gian & Trải Nghiệm</h2>
+        <div class="gallery-grid container" style="max-width: 1200px; margin: 0 auto;">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=600"
+                    alt="Interior"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1550966841-396ad8860ca6?w=600"
+                    alt="Table"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=600"
+                    alt="Chef"></div>
+        </div>
+    </section>
+
+    <section id="booking" class="reservation-bg">
+        <div class="section-padding" style="padding-top: 0;">
+            <h2 class="section-title" style="color: white;">Đặt Bàn Ngay Hôm Nay</h2>
+            <p style="margin-bottom: 40px;">Chúng tôi sẽ liên hệ xác nhận trong vòng 15 phút.</p>
+
+            <form class="booking-form">
+                <div class="form-control">
+                    <input type="text" placeholder="Họ và tên" required>
+                </div>
+                <div class="form-control">
+                    <input type="tel" placeholder="Số điện thoại" required>
+                </div>
+                <div class="form-control">
+                    <input type="email" placeholder="Email" required>
+                </div>
+                <div class="form-control">
+                    <input type="date" required>
+                </div>
+                <div class="form-control">
+                    <input type="time" required>
+                </div>
+                <div class="form-control">
+                    <select>
+                        <option value="">Số lượng khách</option>
+                        <option>1-2 người</option>
+                        <option>3-5 người</option>
+                        <option>Tiệc nhóm (6+)</option>
+                    </select>
+                </div>
+                <button type="submit" class="btn-submit">Gửi Yêu Cầu Đặt Bàn</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 La Belle Époque - Fine Dining Restaurant. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

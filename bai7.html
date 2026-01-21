@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Đặt Bàn - La Belle Époque Fine Dining</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Playfair Display', serif, 'Arial';
+        }
+
+        body {
+            background-color: #fdfcfb;
+            color: #333;
+        }
+
+        .hero {
+            height: 60vh;
+            background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?q=80&w=1600');
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .hero h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            letter-spacing: 2px;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            font-weight: 300;
+            max-width: 600px;
+        }
+
+        .gallery-container {
+            padding: 60px 20px;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .gallery-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+        }
+
+        .gallery-item {
+            flex: 1 1 calc(25% - 15px);
+            min-width: 200px;
+            height: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 100%;
+            transition: transform 0.5s ease;
+        }
+
+        .gallery-item:hover img {
+            transform: scale(1.1);
+        }
+
+        .reservation-section {
+            background-color: #8b0000;
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+        }
+
+        .reservation-section h2 {
+            margin-bottom: 30px;
+            font-size: 2rem;
+        }
+
+        .booking-form {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .form-group {
+            flex: 1 1 calc(33.333% - 15px);
+            min-width: 220px;
+            display: flex;
+            flex-direction: column;
+            text-align: left;
+        }
+
+        .form-group label {
+            font-size: 0.8rem;
+            margin-bottom: 5px;
+            text-transform: uppercase;
+        }
+
+        .form-group input,
+        .form-group select {
+            padding: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 4px;
+        }
+
+        .form-group input::placeholder {
+            color: #ccc;
+        }
+
+        .btn-submit {
+            flex: 1 1 100%;
+            margin-top: 20px;
+            padding: 15px;
+            background-color: white;
+            color: #8b0000;
+            border: none;
+            font-weight: bold;
+            text-transform: uppercase;
+            transition: 0.3s;
+        }
+
+        .btn-submit:hover {
+            background-color: #f0f0f0;
+        }
+
+        footer {
+            background: #121212;
+            color: #777;
+            text-align: center;
+            padding: 30px;
+            font-size: 0.8rem;
+        }
+
+            .form-group {
+                flex: 1 1 100%;
+            }
+
+        
+    </style>
+</head>
+
+<body>
+
+    <header class="hero">
+        <h1>Đặt Bàn Tại La Belle Époque</h1>
+        <p>Trải nghiệm không gian Fine Dining sang trọng và dịch vụ hoàn hảo.</p>
+    </header>
+
+    <section class="gallery-container">
+        <div class="gallery-grid">
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1550966841-396ad8860ca6?w=400"
+                    alt="Space"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1414235077428-338989a2e8c0?w=400"
+                    alt="Dish"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400"
+                    alt="Plating"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=400"
+                    alt="Interior"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1551218808-94e220e084d2?w=400"
+                    alt="Chef"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=400"
+                    alt="Food"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?w=400"
+                    alt="Wine"></div>
+            <div class="gallery-item"><img src="https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?w=400"
+                    alt="View"></div>
+        </div>
+    </section>
+
+    <section class="reservation-section">
+        <h2>Đặt Bàn Ngay Hôm Nay</h2>
+        <form class="booking-form">
+            <div class="form-group">
+                <label>Họ và Tên</label>
+                <input type="text" placeholder="Nguyễn Văn A" required>
+            </div>
+            <div class="form-group">
+                <label>Số Điện Thoại</label>
+                <input type="tel" placeholder="090 123 4567" required>
+            </div>
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" placeholder="email@example.com" required>
+            </div>
+            <div class="form-group">
+                <label>Ngày</label>
+                <input type="date" required>
+            </div>
+            <div class="form-group">
+                <label>Giờ</label>
+                <input type="time" required>
+            </div>
+            <div class="form-group">
+                <label>Số Khách</label>
+                <select>
+                    <option>1 người</option>
+                    <option>2 người</option>
+                    <option>4 người</option>
+                    <option>6 người</option>
+                    <option>Trên 10 người</option>
+                </select>
+            </div>
+            <button type="submit" class="btn-submit">Hoàn Tất Đặt Bàn</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 La Belle Époque - Fine Dining Restaurant. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>
