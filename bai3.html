@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực đơn món ăn - Flexbox</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #ffffff;
+            font-family: Arial, sans-serif;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 20px;
+            padding: 40px;
+            background-color: #f9f9f9;
+            width: 90%;
+            max-width: 1000px;
+        }
+
+        .food-item {
+            flex: 1;
+            text-align: center;
+        }
+
+        .food-item img {
+            width: 100%;
+            height: 150px;
+            object-fit: cover;
+            border-radius: 10px;
+            display: block;
+        }
+
+        .food-item p {
+            margin-top: 15px;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="menu-container">
+        <div class="food-item">
+            <img src="https://img2.storyblok.com/1200x676/filters:quality(80):format(webp)/f/155293/1779x1002/7e5929a6b4/healthy-vegan-food.jpg" alt="Vegetable Salad">
+            <p>Vegetable Salad</p>
+        </div>
+
+        <div class="food-item">
+            <img src="https://www.apetitonline.cz/sites/default/files/styles/apetit_article_landscape_large_2x/public/recepty/pexels-lisa-fotios-1279330.jpg.webp" alt="Pasta">
+            <p>Pasta With Tomato and Basil</p>
+        </div>
+
+        <div class="food-item">
+            <img src="https://images.unsplash.com/photo-1512152272829-e3139592d56f?w=400" alt="Fruit Salad">
+            <p>Fruit Salad</p>
+        </div>
+
+        <div class="food-item">
+            <img src="https://images.unsplash.com/photo-1588166524941-3bf61a9c41db?w=400" alt="Indian Egg Curry">
+            <p>Indian Egg Curry</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

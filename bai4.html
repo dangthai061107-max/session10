@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thực đơn 6 món - Flex-wrap</title>
+    <style>
+        .grid-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 20px;
+            padding: 20px;
+            background-color: #f0f0f0;
+        }
+
+        .food-card {
+            flex: 0 1 calc(33.333% - 20px);
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        .food-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .food-card p {
+            padding: 10px;
+            font-weight: bold;
+            margin: 0;
+            font-family: sans-serif;
+        }
+
+        @media (max-width: 768px) {
+            .food-card {
+                flex: 0 1 calc(50% - 20px);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .food-card {
+                flex: 0 1 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="grid-container">
+        <div class="food-card">
+            <img src="https://uploads.yolo-japan.com/part_time/image/11823/46afb06e23c6ad32a7fe2d06d280dd83.jpg?_gl=1*pucspj*_gcl_au*NDAzMjQyNjQwLjE3Njg5NTk5NjU." alt="Macaroons">
+            <p>Macaroons</p>
+        </div>
+        <div class="food-card">
+            <img src="https://cdn-images.vtv.vn/thumb_w/1200/66349b6076cb4dee98746cf1/2025/05/06/-o-an-nhanh-55979198968482319454561.jpg" alt="Hamburger">
+            <p>Hamburger and Fries</p>
+        </div>
+        <div class="food-card">
+            <img src="https://photo.znews.vn/w960/Uploaded/rotnrz/2023_02_13/pexels_lisa_fotios_1351238.jpg" alt="Basil Leaves">
+            <p>Basil Leaves and Avocado</p>
+        </div>
+        <div class="food-card">
+            <img src="https://nqs.1cdn.vn/2024/11/26/statictttc.kinhtedothi.vn-zoom-1000-uploaded-duongnhatlinh-2024_11_26-_bua-an-pexels-1726478098157853117042_mjkv.jpg" alt="Grilled Meat">
+            <p>Grilled Meat</p>
+        </div>
+        <div class="food-card">
+            <img src="https://cagiongtruongphat.com/FileStorage/Article/Thumbnail/mon-ca%20(2)_1683088832.jpg" alt="Fish">
+            <p>Fish</p>
+        </div>
+        <div class="food-card">
+            <img src="https://cdn.diag.vn/2024/10/3343b908-neu-bua-an-co-chua-nhieu-thuc-pham-giau-chat-beo-nhu-dau-mo-thi-nen-han-che-them-thit-bo-768x576.jpg" alt="Steak">
+            <p>Steak</p>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Nâng Cao - Flexbox Ratio</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+
+        .menu-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .food-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .food-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .food-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-info {
+            padding: 15px;
+            text-align: center;
+        }
+
+        .card-info h3 {
+            margin: 0;
+            font-size: 16px;
+            color: #333;
+        }
+
+        .card-info p {
+            margin: 5px 0 0;
+            color: #b8860b;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+
+        
+    </style>
+</head>
+
+<body>
+
+    <h2>Món Nổi Bật Hôm Nay</h2>
+
+    <div class="menu-grid">
+        <div class="food-card big-item">
+            <img src="https://via.placeholder.com/600x300" alt="Wagyu Beef">
+            <div class="card-info">
+                <h3>Grilled Wagyu Beef Tenderloin</h3>
+                <p>1.200.000 đ</p>
+            </div>
+        </div>
+
+        <div class="food-card small-item">
+            <img src="https://via.placeholder.com/300x300" alt="Scallops">
+            <div class="card-info">
+                <h3>Seared Scallops</h3>
+                <p>320.000 đ</p>
+            </div>
+        </div>
+
+        <div class="food-card small-item">
+            <img src="https://via.placeholder.com/300x300" alt="Deviled Eggs">
+            <div class="card-info">
+                <h3>Truffle Deviled Eggs</h3>
+                <p>180.000 đ</p>
+            </div>
+        </div>
+
+        <div class="food-card half-item">
+            <img src="https://via.placeholder.com/500x300" alt="Lobster">
+            <div class="card-info">
+                <h3>Lobster Bisque</h3>
+                <p>420.000 đ</p>
+            </div>
+        </div>
+
+        <div class="food-card half-item">
+            <img src="https://via.placeholder.com/500x300" alt="Foie Gras">
+            <div class="card-info">
+                <h3>Pan-Seared Foie Gras</h3>
+                <p>580.000 đ</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
